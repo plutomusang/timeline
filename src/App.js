@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Timenode from'./component/timenode';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timenode 
+        personName="Arthur Bryan M. Santos"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis scelerisque odio sit amet dictum. Etiam eget pharetra ligula. Vestibulum eget faucibus nisl. Sed in eros ornare, dapibus erat eu, commodo orci, Pellentesque." 
+        timeRecieved= "08-08 Tue 3PM"
+        timeReleased= "4 PM"
+        documentStatus={true}
+        isLastItem={false}
+      />
+      <Timenode 
+        personName="Arthur Bryan M. Santos"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis scelerisque odio sit amet dictum. Etiam eget pharetra ligula. Vestibulum eget faucibus nisl. Sed in eros ornare, dapibus erat eu, commodo orci, Pellentesque." 
+        timeRecieved= "08-08 Tue 3PM"
+        timeReleased= "4 PM"
+        documentStatus={true}
+        isLastItem={true}
+      />      
     </div>
   );
 }
