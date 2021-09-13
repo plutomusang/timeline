@@ -4,11 +4,7 @@ class Timenode extends Component{
     constructor(){ 
       super() 
       this.state = { 
-          personName:"Arthur Bryan Santos" ,
-          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis scelerisque odio sit amet dictum. Etiam eget pharetra ligula. Vestibulum eget faucibus nisl. Sed in eros ornare, dapibus erat eu, commodo orci, Pellentesque." ,
-          timeRecieved: "08-08 Tue 3PM",
-          timeReleased: "4 PM",
-          documentStatus:true
+          opened:true
       }
     }
     
