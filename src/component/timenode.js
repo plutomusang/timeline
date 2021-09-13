@@ -57,10 +57,7 @@ class Timenode extends Component{
                     <a></a>  
                 </div>  
                 <IfLastItem isLast={this.props.isLastItem} />
-            </div>
-            
-
-            
+            </div>            
         </div>
       )
     }
