@@ -10,46 +10,62 @@ class Timenode extends Component{
     
     render(){
         let statusColor = this.props.documentStatus ? "circle" : "circle-alarm";
-        let html = "<div> Hello there </div>";
-        function LastItem(props) {
+        
+        function EmptyButton() {
+            return  <div class="buttons">
+                        <a></a>  
+                    </div>
+        }
+        function ShowTagAsComplete() {
+            return  <div class="buttons">
+                        <a>Tag as Complete</a>  
+                    </div>
+        }
+        function LastItem() {
             return  <div class="tl-status-last">
                         <div class="circle-cross"></div>
                         <div class ="circliner"> </div> 
-                    </div>;
+                    </div>
           }
-                 
+        
+        function IfDocumentStatus(props) {
+            const isDone = props.isDone;
+            if (!isDone)  return <ShowTagAsComplete />
+            else return <EmptyButton />
+
+              return "";
+        }
+        
         function IfLastItem(props) {
             const isLast = props.isLast;
             if (isLast) {
-              return <LastItem />;
+              return <LastItem />
             }
             return "";
         }          
       return(
-        <div className="timeline-container">
-            <div className="timeline">
+        <div class="timeline-container">
+            <div class="timeline">
             
-                <div className="tl-date"> 
+                <div class="tl-date"> 
                     <a> {this.props.timeRecieved}</a>
                 </div>
 
-                <div className="tl-status">
-                    <div className ={statusColor}> </div> 
-                    <div className ="circliner"> </div> 
+                <div class="tl-status">
+                    <div class ={statusColor}> </div> 
+                    <div class ="circliner"> </div> 
                 </div>
-                <div className="tl-info">{this.props.personName} </div>
-                <div className="buttons">
-                    <a>Tag as Complete</a>  
-                </div>
+                <div class="tl-info">{this.props.personName} </div>
+                <IfDocumentStatus isDone={this.props.documentStatus}/>
                 
-                <div className="tl-date-rel"> 
+                <div class="tl-date-rel"> 
                     <a>{this.props.timeReleased}</a>
                 </div>
-                    <div className="vliner-container"> <div className="vliner"></div> </div>
-                <div className="infoclass">
+                    <div class="vliner-container"> <div class="vliner"></div> </div>
+                <div class="infoclass">
                     {this.props.description}
                 </div>
-                <div className="buttons">
+                <div class="buttons">
                     <a></a>  
                 </div>  
                 <IfLastItem isLast={this.props.isLastItem} />

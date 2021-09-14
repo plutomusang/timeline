@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&family=Urbanist:wght@500&display=swap');
 :root{
     --clr-hot:hsl(48,100%,54%);
-    --clr-cool:rgb(46,189,200);
-    --clr-go:rgb(90,245,125);
-    --clr-alarm:rgb(232,48,213);
+    --clr-cool:hsl(184, 63%, 48%);
+    --clr-go:hsl(134, 89%, 66%);
+    --clr-alarm:hsl(306,80%,54.9%);
     --clr-logo:hsl(199,82%,45%);
     --clr-title:hsl(260,73%,54%);
+    --clr-buttonfont:hsl(184, 63%, 30%);
     --clr-surface:hsl(0,0%,100%);
     --fnt-time: 'Alumni Sans', sans-serif;
-    --fnt-title: 'Urbanist',  Arial;
+    --fnt-title: 'Roboto',  Arial;
     --fnt-info: 'Cabin',  Arial;
     --fnt-button: 'Cabin',  Arial;
     --em-vliner: .15em;
@@ -29,6 +30,47 @@
 }
 
 /* code proper*/
+
+.buttons{
+  display:flex;
+  justify-content: flex-end;
+  place-items:center;
+  font-family: var(--fnt-button);
+  color: var(--clr-buttonfont);
+  font-size: .6rem;
+}
+.circliner {
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+  height:100%;
+  width: var(--em-vliner);
+  background: var(--clr-hot);
+}
+
+
+.circle{
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+  height:var(--em-circle);
+  width:var(--em-circle);
+  border: 1px solid var(--clr-go);
+  border-radius: 50%;
+  background: var(--clr-go);
+  position:relative;
+  
+}
+.circle-alarm{
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;  
+  height:var(--em-circle);
+  width:var(--em-circle);
+  border: 1px solid var(--clr-alarm);
+  border-radius: 50%;
+  background: var(--clr-alarm);
+  position:relative;
+  
+}
+
 .timeline-container{
   width:100%;
   height:100%;
@@ -74,57 +116,16 @@
   height: 30px;
   position:relative;
 }
-.circliner {
-  grid-column: 1 / 2;
-  grid-row: 1 / 1;
-  height:100%;
-  width: var(--em-vliner);
-  background: var(--clr-hot);
-}
-
-
-.circle{
-  grid-column: 1 / 2;
-  grid-row: 1 / 1;
-  height:var(--em-circle);
-  width:var(--em-circle);
-  border: 1px solid var(--clr-go);
-  border-radius: 50%;
-  background: var(--clr-go);
-  position:relative;
-  
-}
-.circle-alarm{
-  grid-column: 1 / 2;
-  grid-row: 1 / 1;  
-  height:var(--em-circle);
-  width:var(--em-circle);
-  border: 1px solid var(--clr-alarm);
-  border-radius: 50%;
-  background: var(--clr-alarm);
-  position:relative;
-  
-}
-
-
 .tl-info {
   font-family: var(--fnt-title);
   color: var(--clr-title);
   font-size: 1rem;
   display:flex;
   justify-content: flex-left;
-  place-items:center;
-
+  place-items: center;
   
 }
-.buttons{
-  display:flex;
-  justify-content: flex-end;
-  place-items:center;
-  font-family: var(--fnt-button);
-  color: var(--clr-cool);
-  font-size: .7rem;
-}
+
 .vliner-container{
   display:grid;
   place-items:center;
@@ -142,6 +143,7 @@
   color: var(--clr-cool);
   font-size: .7rem;
   text-align: justify;
+  padding-right: 20px;
 }
 
 .circle-cross{
